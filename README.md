@@ -59,8 +59,8 @@ VALUES ('M5', 'HP 6', 'Yates', 'Asia', 'America');
 Exercise 5.
 ```SQL
 CREATE TABLE ActorMovie (
-    A VARCHAR(20),
-    M VARCHAR(20),
+    A VARCHAR(20) NOT NULL,
+    M VARCHAR(20) NOT NULL,
     Cachet DECIMAL(6,2),
     MainActor VARCHAR(20) NOT NULL,
     PRIMARY KEY (A, M),
