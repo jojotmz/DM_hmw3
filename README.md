@@ -1,11 +1,11 @@
 Homework #3
-Spring 2022
+Spring 2022,
 Author: Joao Tomazoni
 =====================
 
 Exercise 1.
 ```SQL
-CREATE TABLE IF NOT EXISTS ACTOR (
+CREATE TABLE ACTOR (
     A VARCHAR(20) PRIMARY KEY NOT NULL,
     ActorName VARCHAR(20),
     Country VARCHAR(20),
@@ -22,7 +22,7 @@ VALUES ('A1', 'Daniel Radcliffe', 'Great Britain', '1989-07-02'),
 
 Exercise 3.
 ```SQL
-CREATE TABLE IF NOT EXISTS Movie (
+CREATE TABLE Movie (
     M VARCHAR(20) PRIMARY KEY NOT NULL,
     Title VARCHAR(20),
     Director VARCHAR(20),
@@ -58,13 +58,13 @@ VALUES ('M5', 'HP 6', 'Yates', 'Asia', 'America');
 
 Exercise 5.
 ```SQL
-CREATE TABLE IF NOT EXISTS ActorMovie (
+CREATE TABLE ActorMovie (
     A VARCHAR(20),
     M VARCHAR(20),
     Cachet DECIMAL(6,2),
     MainActor VARCHAR(20) NOT NULL,
     PRIMARY KEY (A, M),
-    FOREIGN KEY (A) REFERENCES ACTOR(A) ON DELETE CASCADE,
+    FOREIGN KEY (A) REFERENCES Actor(A) ON DELETE CASCADE,
     FOREIGN KEY (M) REFERENCES Movie(M) ON DELETE CASCADE,
     CONSTRAINT cachet_check CHECK (Cachet > 0)
 )
@@ -161,8 +161,9 @@ WHERE Director = 'Columbus' AND DirectorRegion = 'America';
 ```
 
 Exercise 14.
-```
+```SQL
 GRANT SELECT ON Movie TO Ribo
 ```
 
 Exercise 15.
+> When there's parent-child relationship between two tables with the child pointing to parent via foreign key, `ON DELETE CASCADE` means that deletion of parent row causes the related child row to be deleted. `ON DELETE SET NULL` keeps the child row in the database even if parent row is deleted, but set their value to NULL
