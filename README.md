@@ -5,7 +5,7 @@ Author: Joao Tomazoni
 
 Exercise 1.
 ```SQL
-CREATE TABLE ACTOR (
+CREATE TABLE Actor (
     A VARCHAR(20) PRIMARY KEY NOT NULL,
     ActorName VARCHAR(20),
     Country VARCHAR(20),
