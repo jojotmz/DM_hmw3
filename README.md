@@ -96,7 +96,7 @@ Movie.Title as Title,
 Movie.Director as Director,
 Movie.MovieRegion as MovieRegion
 FROM ActorMovie
-JOIN Actor on ActorMovie.A = ACTOR.A
+JOIN Actor on ActorMovie.A = Actor.A
 JOIN Movie on ActorMovie.M = Movie.M;
 
 SELECT * FROM GlobalView;
