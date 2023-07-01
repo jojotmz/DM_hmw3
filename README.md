@@ -1,6 +1,5 @@
 Homework #3
 Spring 2022,
-Author: Joao Tomazoni
 =====================
 
 Exercise 1.
